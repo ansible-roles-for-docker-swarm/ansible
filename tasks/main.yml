@@ -1,2 +1,26 @@
 ---
-# tasks file for ansible-ansible-role
+
+- name: Install pip
+  apt:
+    name: python3-pip
+    state: present
+
+- name: Install python docker for docker_* tasks
+  pip:
+    name: docker
+    state: present
+
+- name: Install python jsondiff for docker_stack tasks
+  pip:
+    name: jsondiff
+    state: present
+
+- name: Install python python-consul
+  pip:
+    name: python-consul
+    state: present
+
+- name: Install required python pyhcl
+  pip:
+    name: pyhcl
+    state: present
